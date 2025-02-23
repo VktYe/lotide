@@ -31,7 +31,7 @@ assertEqual(case3.length, 0); // ensures there is an empty array
 
 // Test Case 4: An empty array
 
-const case4 = tail([0]);
+const case4 = tail([]);
 assertEqual(case4.length, 0); // should yield an empty array for its tail
 
 
