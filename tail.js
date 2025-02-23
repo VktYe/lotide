@@ -13,8 +13,8 @@ const tail = function(array) {
 
 };
 
-// Test Case 1: Check the return array elemnt
-const result = tail(["Hello", "Lighthouse", "Labs"]);
+// Test Case 1: Check the return array element
+const result = tail(["Hello", "Lighthouse", "Labs"]); // Testing that the tail function correctly removes the first element and returns the rest of the array
 assertEqual(result.length, 2); // ensure we get back two elements
 assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
 assertEqual(result[1], "Labs"); // ensure second element is "Labs"
