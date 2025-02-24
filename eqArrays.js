@@ -28,7 +28,7 @@ assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => false
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => false
 
-assertEqual(eqArrays(["1", "2", "3"], ["1", 2, "3"]), true); // => should fail
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), false); // => should fail
-assertEqual(eqArrays([], ["1", "2", "3"]), true); // => should fail
+assertEqual(eqArrays(["1", "2", "3"], ["1", 2, "3"]), false); // => true
+assertEqual(eqArrays(["1", "2", "3"], ["", "2", "3"]), true); // => should fail - tests assertionEqual function
+assertEqual(eqArrays([], ["1", "2", "3"]), true); // => should fail - tests assertionEqual function
 
