@@ -1,13 +1,11 @@
-// const assertEqual = function(actual, expected) {
-//   if (actual === expected) {
-//     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-//   } else {
-//     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-//   }
-// };
+// Task
+// Implement assertArraysEqual:
+// - will take in two arrays and assert them
+// -> will console.log an appropriate message to the console.
+// - message similar to assertEqual
 
 const eqArrays = function(arr1, arr2) {
- 
+// this code checks if twoo arrays are equal
   if (arr1.length !== arr2.length) {  // first compares length of arrays
     return false;  // if not equal return false
   } for (let i = 0; i < arr1.length; i++) { // iterates through the values of the arr
@@ -18,17 +16,13 @@ const eqArrays = function(arr1, arr2) {
   return true; // if length and values of the arrays equal returns true
 };
 
-// Implement assertArraysEqual:
-// - will take in two arrays and assert them
-// -> will console.log an appropriate message to the console.
-// - message similar to assertEqual
-
+// this code asserts if two arrays are equal
 const assertArraysEqual = function(arr1, arr2) {
- //console.log a message
- if (eqArrays(arr1, arr2)) {
-   console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-} else {
-  console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
+
+  if (eqArrays(arr1, arr2)) {
+    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
   }
 };
 
