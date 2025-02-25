@@ -25,22 +25,25 @@ const without = function(source, itemsToRemove) { //loops through source element
 
   //outer loop
   for (let i = 0; i < source.length; i++) { //loops through source elements
-    let shouldPush = true; 
+    let shouldPush = true;
 
-  //inner loop
+    //inner loop
     for (let j = 0; j < itemsToRemove.length; j++) { //loops through itemsToRemove
-    if (source[i] === itemsToRemove[j]) { //when finds matches, should sets to false 
-      shouldPush = false; 
-      break; //break inner loop after that
-    } 
+      if (source[i] === itemsToRemove[j]) { //when finds matches, should sets to false
+        shouldPush = false;
+        break; //break inner loop after that
+      }
+    }
+    if (shouldPush) { //while shouldPush is true pushes source[i] to newSource
+      newSource.push(source[i]);
+  
+    }
   }
-  if (shouldPush) { //while shouldPush is true pushes source[i] to newSource
-  newSource.push(source[i])
-}
-}
   console.log('Original: ', source);
   console.log('To remove:', itemsToRemove);
   console.log('Filtered: ', newSource);
+
+  return newSource;
 };
 
 
@@ -59,3 +62,5 @@ without(numbers, [1, 2]);//[]
 
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 assertArraysEqual(numbers, [1, 2, 3 ,4 ,5]);
+
+
