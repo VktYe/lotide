@@ -1,5 +1,5 @@
 /* counOnly:
-- takes a collection of itmes
+- takes a collection of items
 - returns counts of a specific subset of those items
 */
 const assertEqual = function(actual, expected) {
@@ -20,15 +20,7 @@ const countOnly = function(allItems, itemsToCount) {
   // set a property with that string key to:
   // the value that was already there (or zero if nothing there) with 1 added to it.
   for (const item of allItems) {
-    console.log(item);
-    
-
-
-    // if (results[item]) {
-    //   results[item] += 1;
-    // } else {
-    //   results[item] = 1;
-    // }
+  
     if (itemsToCount[item]) {
       if (results[item]) {
         results[item] += 1;
@@ -38,9 +30,6 @@ const countOnly = function(allItems, itemsToCount) {
     }
   }
   
-
-  console.log('Results: ', results);
-
   return results;
 };
 
