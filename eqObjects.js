@@ -7,31 +7,33 @@ const assertEqual = function(actual, expected) {
 };
 
 // returns true if both obj have identical keys with identical values.
-// Otherwise you get back a bif fat false! 
+// Otherwise you get back a bif fat false!
 const eqObjects = function(obj1, obj2) {
-  const obj1Keys = Object.keys(obj1);
-  const obj2Keys = Object.keys(obj2);
-  // console.log('obj1 keys: ', Object.keys(obj1), 'obj2 keys: ', Object.keys(obj2));
-  // console.log(typeof Object.keys(obj1));
-  // for (const key of obj1Keys) {
-  //   // console.log(key1); 
-  //   if (!(obj1Keys[key]===obj2Keys[key])) {
-  //     return false
-    // }
+
+  // checks the length of keys for both objects
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    return false;
+  }
+
+  for (const key of Object.keys(obj1)) { //looping through object' key
+    if (obj1[key] !== obj2[key]) { // compares the key-value pair in both objects
+   
+      return false;
+    }
   
-  // console.log('Obj1 keys: ', obj1Keys[key], 'Obj2 keys: ', obj2Keys[key]);
- if (Object.keys(obj1).length === Object.keys(obj2).length) {
+  // console.log('key:', key, "obj1[key]:", obj1[key], 'obj2[key]:', obj2[key])
+  }
   return true;
- }
-  return false;
 };
 
 const shirtObject = { color: "red", size: "medium" };
+const shirtObject1 = { color: "red", size: "small" };
 const anotherShirtObject = { size: "medium", color: "red"};
-// console.log(eqObjects(shirtObject, anotherShirtObject)); // => true
+const anotherShirtObject1 = { size: "medium", colour: "red"};
 
-assertEqual(eqObjects(shirtObject, anotherShirtObject), true); 
-
+assertEqual(eqObjects(shirtObject, anotherShirtObject), true);
+assertEqual(eqObjects(shirtObject1, anotherShirtObject), false); //
+assertEqual(eqObjects(anotherShirtObject, anotherShirtObject1), false); // false because color key is not identical
 const longSleeveShirtobject = { size: "medium", color: "red", sleeveLength: "long"};
-eqObjects(shirtObject, longSleeveShirtobject); // => false
-assertEqual(eqObjects(shirtObject, longSleeveShirtobject), false); 
+
+assertEqual(eqObjects(shirtObject, longSleeveShirtobject), false);
