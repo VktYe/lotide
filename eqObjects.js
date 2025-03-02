@@ -41,7 +41,6 @@ const eqObjects = function(obj1, obj2) {
   
     }
   
-  // console.log('key:', key, "obj1[key]:", obj1[key], 'obj2[key]:', obj2[key])
   }
   return true;
 };
