@@ -33,7 +33,7 @@ const takeUntil = function(array, callback) {
     }
 
   }
-  return array.slice(0); // if callback doesn't return true - return the whole array
+  return array;
   
 };
 
