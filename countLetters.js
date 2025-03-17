@@ -19,12 +19,13 @@ const countLetters = function(sentence) {
 };
 
 
-// console.log(countLetters("lighthouse in the house"));
-// assertEqual((countLetters("lighthouse in the house")), { l: 1, i: 2, g: 1, h: 4, t: 2, o: 2, u: 2, s: 2, e: 3, n: 1 });
+console.log(countLetters("lighthouse in the house"));
 
-// console.log(countLetters("I do not like the weather today"));
-// const result2 = { I: 1, d: 2, i: 2, t: 4, h: 1, s: 3, a: 2, k: 1, o: 2, f: 1 };
-// assertEqual(countLetters("I do not like the weather today"), result2);
+assertEqual(String(countLetters("lighthouse in the house")), String({ l: 1, i: 2, g: 1, h: 4, t: 2, o: 2, u: 2, s: 2, e: 3, n: 1 }));
+
+console.log(countLetters("I do not like the weather today"));
+const result2 = String({ I: 1, d: 2, i: 2, t: 4, h: 1, s: 3, a: 2, k: 1, o: 2, f: 1 });
+assertEqual(String(countLetters("I do not like the weather today")), result2);
 
 module.exports = countLetters;
 
