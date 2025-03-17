@@ -2,14 +2,14 @@
 
 const middle = function(array) {
   const middleOfArray = [];
-  const middle = Math.floor(array.length / 2); // calculating middle index number of the array
+  const middleIndex = Math.floor(array.length / 2); // calculating middle index number of the array
   if (array.length <= 2) {  // if less than 2, returns empty array
     return [];
   } else if (array.length % 2 === 1) {  // if more than 2, but odd => pushes middle element of the array to middleOfArray
-    middleOfArray.push(array[middle]);
+    middleOfArray.push(array[middleIndex]);
   } else { // if more than 2, but even = pushes 2 middle elements
-    middleOfArray.push(array[middle - 1]);
-    middleOfArray.push(array[middle]);
+    middleOfArray.push(array[middleIndex - 1]);
+    middleOfArray.push(array[middleIndex]);
   }
 
   return middleOfArray;
