@@ -21,10 +21,6 @@ describe("#middle", () => {
   it("returns [3] for [1, 2, 3, 4, 5]", () => {
     assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
   });
-
-  it("returns [3] for [1, 2, 3, 4, 5]", () => {
-    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
-  });
   it("returns [30, 40] for [10, 20, 30, 40, 50, 60]", () => {
     assert.deepEqual(middle([10, 20, 30, 40, 50, 60]), [30, 40]);
   });
