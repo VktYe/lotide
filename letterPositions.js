@@ -1,25 +1,5 @@
-// this code checks if twoo arrays are equal
-const eqArrays = function(arr1, arr2) {
-  
-  if (arr1.length !== arr2.length) {
-    return false;
-  } for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-const assertArraysEqual = function(arr1, arr2) {
 
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
-
-const letterPosition = function(sentence) {
+const letterPositions = function(sentence) {
   const result = {};
 
   for (let i = 0; i < sentence.length; i++) {
@@ -37,6 +17,5 @@ const letterPosition = function(sentence) {
   return result;
 };
 
-assertArraysEqual(letterPosition("lighthouse in the house").h, [3, 5, 15, 18]); //assertion passed
-assertArraysEqual(letterPosition("hello").e, [1]); // assertion passed
-assertArraysEqual(letterPosition("this cat is funny").n, [14, 15]); //assertion passed
+
+module.exports = letterPositions;
