@@ -3,11 +3,13 @@
 const middle = function(array) {
   const middleOfArray = [];
   const middleIndex = Math.floor(array.length / 2); // calculating middle index number of the array
-  if (array.length <= 2) {  // if less than 2, returns empty array
+  if (array.length <= 2) {
     return [];
-  } else if (array.length % 2 === 1) {  // if more than 2, but odd => pushes middle element of the array to middleOfArray
+
+  } else if (array.length % 2 === 1) {
     middleOfArray.push(array[middleIndex]);
-  } else { // if more than 2, but even = pushes 2 middle elements
+
+  } else {
     middleOfArray.push(array[middleIndex - 1]);
     middleOfArray.push(array[middleIndex]);
   }
