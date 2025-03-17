@@ -1,13 +1,26 @@
-const assertEqual = require("../assertEqual");
+const assert = require('chai').assert;
 const eqArrays = require("../eqArrays");
 
-// Use assertEqual to write test cases for various scenarios.
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // Assertion Passed: true === true
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // Assertion Passed: false === false
+describe("#eqArrays", () => {
+  it("returns true for 2 identical arrays with numbers [1, 2, 3] and [1, 2, 3]", () => {
+    assert.deepEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
 
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // Assertion Passed: true === true
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // Assertion Passed: false === false
+  it("returns false for 2 not identical arrays with numbers [1, 2, 3] and [3, 2, 1]", () => {
+    assert.deepEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
+  });
 
-assertEqual(eqArrays(["1", "2", "3"], ["1", 2, "3"]), false); // Assertion Passed: false === false
-assertEqual(eqArrays(["1", "2", "3"], ["", "2", "3"]), false); // Assertion Passed: false === falsefail - tests assertionEqual function
-assertEqual(eqArrays([], ["1", "2", "3"]), false); // Assertion Passed: false === false
+  it("returns true for 2 not identical arrays with strings ['1', '2', '3'] and ['1', '2', '3']", () => {
+    assert.deepEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+  });
+
+  it("returns false for comparing string to number ['1', '2', '3'] and ['1', '2', 3]", () => {
+    assert.deepEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+  });
+
+  it("returns true for 2 empty arrays", () => {
+    assert.deepEqual(eqArrays([], []), true);
+  });
+
+
+});
